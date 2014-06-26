@@ -5,7 +5,7 @@ class CreateProductFoodLozenges < ActiveRecord::Migration
         t.string     :name
         t.string     :value
         t.string     :percentage
-        t.references :product_item
+        t.references :item
         t.timestamps
       end
     end
