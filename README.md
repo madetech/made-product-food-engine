@@ -4,6 +4,8 @@ made-product-food-engine
 This engine is an extension to the Made Product Engine, which can be found here:
   https://github.com/madebymade/made-product-engine
 
+The model provided will inherit from Product::Item.
+
 Add this to your Gemfile.
   gem 'product_food', :git => 'git://github.com/madebymade/made-product-engine.git'
 
