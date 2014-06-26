@@ -6,11 +6,14 @@ This engine is an extension to the Made Product Engine, which can be found here:
 
 The model provided will inherit from Product::Item.
 
-Add this to your Gemfile.
-  gem 'product_food', :git => 'git://github.com/madebymade/made-product-engine.git'
+## Installation
 
-To copy the migrations, run:
- rake product_food:install:migrations
+Add this line to your application's Gemfile:
 
-bundle exec rake db:migrate
+    gem 'product_food', :git => 'git://github.com/madebymade/made-product-engine.git'
+
+To copy the migrations from the engine to your application, run:
+    rake product_food:install:migrations
+
+    bundle exec rake db:migrate
 
