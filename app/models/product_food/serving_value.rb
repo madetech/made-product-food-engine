@@ -13,7 +13,7 @@ module ProductFood
     validates_presence_of             :serving_value,
                                       :large_value
 
-    validates                         :typical_value_id, :uniqueness => { :scope => :serving_detail_id }
+    validates                         :typical_value_id, uniqueness: { scope: :serving_detail_id }
 
     def to_s
       serving_value

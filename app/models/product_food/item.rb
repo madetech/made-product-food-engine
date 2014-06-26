@@ -7,7 +7,7 @@ module ProductFood
                                     :serving_detail,
                                     :serving_detail_attributes
 
-    has_one                         :serving_detail, :dependent => :destroy
+    has_one                         :serving_detail, dependent: :destroy
     accepts_nested_attributes_for   :serving_detail
 
     validates_presence_of           :ingredients,
