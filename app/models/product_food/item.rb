@@ -13,8 +13,22 @@ module ProductFood
     accepts_nested_attributes_for   :serving_detail
     accepts_nested_attributes_for   :lozenges, allow_destroy: true
 
-    validates_presence_of           :ingredients,
-                                    :allergy_information,
-                                    :serving_detail
+    validates_presence_of           :ingredients, if: Proc.new { |i| i.requires_ingredients? }
+    validates_presence_of           :allergy_information, if: Proc.new { |i| i.requires_ingredients? }
+    validates_presence_of           :serving_detail, if: Proc.new { |i| i.requires_ingredients? }
+
+    protected
+
+    def requires_ingredients?
+      true
+    end
+
+    def requires_allergy_information?
+      true
+    end
+
+    def requires_serving_detail?
+      true
+    end
   end
 end
