@@ -17,8 +17,6 @@ module ProductFood
     validates_presence_of           :allergy_information, if: Proc.new { |i| i.requires_ingredients? }
     validates_presence_of           :serving_detail, if: Proc.new { |i| i.requires_ingredients? }
 
-    protected
-
     def requires_ingredients?
       true
     end
