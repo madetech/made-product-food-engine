@@ -1,6 +1,6 @@
 module ProductFood
   class Lozenge < ActiveRecord::Base
-    TYPES = ['Calories', 'Sugars', 'Fat', 'Saturates', 'Salts']
+    TYPES = ['Energy', 'Sugars', 'Fat', 'Saturates', 'Salts']
 
     belongs_to      :item
 
