@@ -1,6 +1,6 @@
 module ProductFood
   class Lozenge < ActiveRecord::Base
-    TYPES = ['Energy', 'Sugars', 'Fat', 'Saturates', 'Salts']
+    TYPES = ['Energy', 'Fat', 'Saturates', 'Sugars', 'Salt']
 
     belongs_to      :item
 
@@ -8,6 +8,5 @@ module ProductFood
     validates       :name, presence: true, inclusion: { in: TYPES }, uniqueness: { scope: :item_id }
     validates       :value, presence: true
     validates       :percentage, presence: true
-
   end
 end

@@ -1,6 +1,6 @@
 module ProductFood
   class Item < Product::Item
-    self.table_name = "product_items"
+    self.table_name = 'product_items'
 
     attr_accessible                 :ingredients,
                                     :allergy_information,
@@ -9,7 +9,14 @@ module ProductFood
                                     :lozenges_attributes
 
     has_one                         :serving_detail, dependent: :destroy
-    has_many                        :lozenges, dependent: :destroy
+    has_many                        :lozenges, dependent: :destroy, order: "CASE name
+                                                                            WHEN 'Energy' THEN 1
+                                                                            WHEN 'Fat' THEN 2
+                                                                            WHEN 'Saturates' THEN 3
+                                                                            WHEN 'Sugars' THEN 4
+                                                                            WHEN 'Salt' THEN 5
+                                                                            END"
+
     accepts_nested_attributes_for   :serving_detail
     accepts_nested_attributes_for   :lozenges, allow_destroy: true
 
